@@ -19,7 +19,10 @@ export class EditComponent implements OnInit {
      this.id=Number(params.get("id"))
     }
  );
-   this._userService.getUser(this.id).subscribe(response=>{this.user = response as User});
+   this._userService.getUser(this.id).subscribe(response=>{
+     this.user = response as User
+
+    });
   }
   onSubmit(value:any)
   {
@@ -27,5 +30,7 @@ export class EditComponent implements OnInit {
        this._route.navigateByUrl('');
      })
   }
-
+  dateChanged(eventDate: string): Date | null {
+    return !!eventDate ? new Date(eventDate) : null;
+  }
 }
