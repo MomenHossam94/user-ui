@@ -28,7 +28,7 @@
         </div>
         <div class="form-group">
             <label for="">JoiningDate</label>
-            <input type="date" class="form-control"   name="joiningDate"  [(ngModel)]="user.joiningDate">
+            <input type="date" class="form-control"   name="joiningDate"  [ngModel]="user.joiningDate | date:'yyyy-MM-dd'" (ngModelChange)="user.joiningDate = $event"  >
         </div>
         <div class="row">
             <div class="form-group col-md-6">
